@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF3DA3CF26F8C2A900D13AE7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3DA3CE26F8C2A900D13AE7 /* LoginView.swift */; };
+		CF3DA3D126F8C88600D13AE7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3DA3D026F8C88600D13AE7 /* HomeView.swift */; };
 		CF8EEC1A26F0DF43005EBDF1 /* MyTODOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EEC1926F0DF43005EBDF1 /* MyTODOApp.swift */; };
 		CF8EEC1C26F0DF43005EBDF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EEC1B26F0DF43005EBDF1 /* ContentView.swift */; };
 		CF8EEC1E26F0DF44005EBDF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF8EEC1D26F0DF44005EBDF1 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF3DA3CE26F8C2A900D13AE7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CF3DA3D026F8C88600D13AE7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CF8EEC1626F0DF43005EBDF1 /* MyTODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8EEC1926F0DF43005EBDF1 /* MyTODOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTODOApp.swift; sourceTree = "<group>"; };
 		CF8EEC1B26F0DF43005EBDF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			children = (
 				CF8EEC1926F0DF43005EBDF1 /* MyTODOApp.swift */,
 				CF8EEC1B26F0DF43005EBDF1 /* ContentView.swift */,
+				CF3DA3CE26F8C2A900D13AE7 /* LoginView.swift */,
+				CF3DA3D026F8C88600D13AE7 /* HomeView.swift */,
 				CF8EEC1D26F0DF44005EBDF1 /* Assets.xcassets */,
 				CF8EEC2226F0DF44005EBDF1 /* Info.plist */,
 				CF8EEC1F26F0DF44005EBDF1 /* Preview Content */,
@@ -85,6 +91,8 @@
 			dependencies = (
 			);
 			name = MyTODO;
+			packageProductDependencies = (
+			);
 			productName = MyTODO;
 			productReference = CF8EEC1626F0DF43005EBDF1 /* MyTODO.app */;
 			productType = "com.apple.product-type.application";
@@ -116,6 +124,8 @@
 				Base,
 			);
 			mainGroup = CF8EEC0D26F0DF43005EBDF1;
+			packageReferences = (
+			);
 			productRefGroup = CF8EEC1726F0DF43005EBDF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,6 +152,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3DA3CF26F8C2A900D13AE7 /* LoginView.swift in Sources */,
+				CF3DA3D126F8C88600D13AE7 /* HomeView.swift in Sources */,
 				CF8EEC1C26F0DF43005EBDF1 /* ContentView.swift in Sources */,
 				CF8EEC1A26F0DF43005EBDF1 /* MyTODOApp.swift in Sources */,
 			);
