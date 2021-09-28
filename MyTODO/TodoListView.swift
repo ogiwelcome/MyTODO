@@ -26,29 +26,40 @@ struct TodoRow: View {
     }
 }
 struct TodoListView: View {
+    @State var isPresentedAddRowView = false
     var body: some View {
-        let todo_s: [Todo] = [
-            Todo(
-                title: "hoge",
-                type: "hoge",
-                note: "hogehoge",
-                rating: 1
-            ),
-            Todo(
-                title: "piyo",
-                type: "piyo",
-                note: "piyopiyo",
-                rating: 5
-            ),
-            Todo(
-                title: "pon",
-                type: "pon",
-                note: "ponon",
-                rating: 3
-            )
-        ]
-        return List(todo_s) {todo in
-            TodoRow(todo: todo)
+        VStack {
+            let todo_s: [Todo] = [
+                Todo(
+                    title: "hoge",
+                    type: "hoge",
+                    note: "hogehoge",
+                    rating: 1
+                ),
+                Todo(
+                    title: "piyo",
+                    type: "piyo",
+                    note: "piyopiyo",
+                    rating: 5
+                ),
+                Todo(
+                    title: "pon",
+                    type: "pon",
+                    note: "ponon",
+                    rating: 3
+                )
+            ]
+            List(todo_s) {todo in
+                TodoRow(todo: todo)
+            }
+            // closeボタンは無しでスクロールに任せる
+            Button("予定を追加") {
+                self.isPresentedAddRowView.toggle()
+            }
+            .sheet(isPresented: $isPresentedAddRowView){
+                AddRowView()
+            }
+            Spacer()
         }
         
     }
