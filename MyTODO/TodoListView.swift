@@ -29,7 +29,7 @@ struct TodoListView: View {
     @State var isPresentedAddRowView = false
     var body: some View {
         VStack {
-            let todo_s: [Todo] = [
+            let todos: [Todo] = [
                 Todo(
                     title: "hoge",
                     type: "hoge",
@@ -49,7 +49,7 @@ struct TodoListView: View {
                     rating: 3
                 )
             ]
-            List(todo_s) {todo in
+            List(todos) {todo in
                 TodoRow(todo: todo)
             }
             // closeボタンは無しでスクロールに任せる
