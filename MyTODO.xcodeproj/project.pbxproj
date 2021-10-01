@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		CF3DA3D026F8C88600D13AE7 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
-		CF6FB33C26FEB2430074293C /* AddRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRowView.swift; sourceTree = "<group>"; };
+		CF6FB33C26FEB2430074293C /* AddRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRowView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		CF6FB33E26FEC27B0074293C /* DeleteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRowView.swift; sourceTree = "<group>"; };
 		CF8EEC1626F0DF43005EBDF1 /* MyTODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8EEC1926F0DF43005EBDF1 /* MyTODOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTODOApp.swift; sourceTree = "<group>"; };

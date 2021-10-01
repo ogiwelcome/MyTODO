@@ -11,7 +11,7 @@ struct AddRowView: View {
     @State var mfgs:[String] = []
     @State var todos:[Todo] = []
     @State var title = ""
-    @State var type = ""
+    @State var type = "medium"
     @State var note = ""
     @State var rating = 3
     var body: some View {
@@ -20,18 +20,22 @@ struct AddRowView: View {
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack(alignment: .leading) {
                 VStack {
-                    Spacer()
+                    //Spacer()
                     Text("Add new schedule")
                         .font(.footnote)
                         .foregroundColor(.secondary)
-                    Spacer()
+                        .padding()
+                    //Spacer()
                     VStack {
                         Text("Title")
                         TextField("Input new title", text: $title)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                         Text("type")
-                        TextField("Input new type", text: $type)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        Picker(selection: $type, label: Text("type")) {
+                            Text("easy").tag("easy")
+                            Text("medium").tag("medium")
+                            Text("hard").tag("hard")
+                        }.pickerStyle(SegmentedPickerStyle()).padding()
                         Text("Note")
                         TextField("Input new note", text: $note)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -42,10 +46,10 @@ struct AddRowView: View {
                             Text("3").tag(3)
                             Text("4").tag(4)
                             Text("5").tag(5)
-                        }.pickerStyle(SegmentedPickerStyle())
-                        Spacer()
+                        }.pickerStyle(SegmentedPickerStyle()).padding()
+                        //Spacer()
                         Button(action: {
-                            self.todos.append(
+                            todos.append(
                                 Todo(
                                     title:self.title,
                                     type:self.type,
@@ -57,14 +61,12 @@ struct AddRowView: View {
                             self.type=""
                             self.note=""
                             self.rating=3
-                            //TODO:self.ratingをpickerで作る
                         }) {
                             Text("Add")
                                 .buttonStyle(BorderlessButtonStyle())
                         }
                     }//H
                 }.padding([.leading,.trailing])//V
-                Spacer()
                 /*
                 List(todos) {todo in
                     TodoRow(todo: todo)
