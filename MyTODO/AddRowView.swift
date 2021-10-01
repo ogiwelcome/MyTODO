@@ -42,7 +42,7 @@ struct AddRowView: View {
                             Text("3").tag(3)
                             Text("4").tag(4)
                             Text("5").tag(5)
-                        }
+                        }.pickerStyle(SegmentedPickerStyle())
                         Spacer()
                         Button(action: {
                             self.todos.append(
@@ -64,9 +64,12 @@ struct AddRowView: View {
                         }
                     }//H
                 }.padding([.leading,.trailing])//V
+                Spacer()
+                /*
                 List(todos) {todo in
                     TodoRow(todo: todo)
                 }
+                */
             }//V
         }//Z
     }
