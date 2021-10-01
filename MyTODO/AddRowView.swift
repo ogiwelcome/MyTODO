@@ -15,41 +15,60 @@ struct AddRowView: View {
     @State var note = ""
     @State var rating = 3
     var body: some View {
-        VStack(alignment: .leading) {
-            VStack {
-                Text("Add new schedule")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
+        ZStack {
+            Color("backAdd")
+                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            VStack(alignment: .leading) {
                 VStack {
-                    TextField("Input new title", text: $title)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Input new type", text: $type)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Input new note", text: $note)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    Button(action: {
-                        self.todos.append(
-                            Todo(
-                                title:self.title,
-                                type:self.type,
-                                note:self.note,
-                                rating:self.rating
+                    Spacer()
+                    Text("Add new schedule")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                    Spacer()
+                    VStack {
+                        Text("Title")
+                        TextField("Input new title", text: $title)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        Text("type")
+                        TextField("Input new type", text: $type)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        Text("Note")
+                        TextField("Input new note", text: $note)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        Text("Rating")
+                        Picker(selection: $rating, label: Text("rating")) {
+                            /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
+                            Text("2").tag(2)
+                            Text("3").tag(3)
+                            Text("4").tag(4)
+                            Text("5").tag(5)
+                        }
+                        Spacer()
+                        Button(action: {
+                            self.todos.append(
+                                Todo(
+                                    title:self.title,
+                                    type:self.type,
+                                    note:self.note,
+                                    rating:self.rating
+                                )
                             )
-                        )
-                        self.title=""
-                        self.type=""
-                        self.note=""
-                        //TODO:self.ratingをpickerで作る
-                    }) {
-                        Text("Add")
-                            .buttonStyle(BorderlessButtonStyle())
-                    }
-                }//H
-            }.padding([.leading,.trailing])//V
-            List(todos) {todo in
-                TodoRow(todo: todo)
-            }
-        }//V
+                            self.title=""
+                            self.type=""
+                            self.note=""
+                            self.rating=3
+                            //TODO:self.ratingをpickerで作る
+                        }) {
+                            Text("Add")
+                                .buttonStyle(BorderlessButtonStyle())
+                        }
+                    }//H
+                }.padding([.leading,.trailing])//V
+                List(todos) {todo in
+                    TodoRow(todo: todo)
+                }
+            }//V
+        }//Z
     }
 }
 
